@@ -19,27 +19,27 @@ function register_schedule() {
   }
 }
 
-add_action('my_daily_event', 'send_mail_to_admin');
+// add_action('my_daily_event', 'send_mail_to_admin');
 
-function send_mail_to_admin() {
+// function send_mail_to_admin() {
    
- //wp_mail('dev-email@wpengine.local', 'Morning Message', 'Good Morning! Have a nice day. :)');
-}
+//  //wp_mail('dev-email@wpengine.local', 'Morning Message', 'Good Morning! Have a nice day. :)');
+// }
 
-register_deactivation_hook( __FILE__, 'remove_schedule');
+// register_deactivation_hook( __FILE__, 'remove_schedule');
 
-function remove_schedule() {
-  wp_clear_scheduled_hook('my_daily_event');
-}
+// function remove_schedule() {
+//   wp_clear_scheduled_hook('my_daily_event');
+// }
 
-add_filter('cron_schedules', 'custom_cron_schedules');
+// add_filter('cron_schedules', 'custom_cron_schedules');
 
-function custom_cron_schedules($schedules) {
-  if (!isset($schedules['1minutes'])) {
-    $schedules['1minutes'] = array(
-      'interval' => 60,
-      'display' => __('Once every 1 minute'));
-  }
+// function custom_cron_schedules($schedules) {
+//   if (!isset($schedules['1minutes'])) {
+//     $schedules['1minutes'] = array(
+//       'interval' => 60,
+//       'display' => __('Once every 1 minute'));
+//   }
   
-  return $schedules;
-}
+//   return $schedules;
+// }
