@@ -25,7 +25,7 @@ register_activation_hook( __FILE__, 'register_schedule');
 //Schedule register when plugin is installed
 function register_schedule() {
   if (!wp_next_scheduled('my_daily_event')) {
-    wp_schedule_event(time(), '1minute', 'my_daily_event');
+    wp_schedule_event(time(), 'daily', 'my_daily_event');
   }
 }
 
@@ -40,7 +40,7 @@ function remove_schedule() {
 }
 
 
-//Scheduling cron for every minute
+//Scheduling cron for every minute for demo 
 add_filter('cron_schedules', 'custom_cron_schedules');
 
 function custom_cron_schedules($schedules) {
