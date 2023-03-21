@@ -9,6 +9,17 @@ Author URI: https://mahesh.dubal@wisdmlabs.com/
 License: GPL2
 */
 
+
+if (!defined('WPINC')) {
+    die;
+}
+
+require plugin_dir_path( __FILE__ ). 'includes/get_post_details.php';
+require plugin_dir_path( __FILE__ ). 'includes/page_speed.php';
+require plugin_dir_path( __FILE__ ). 'includes/send_post_details.php';
+
+
+
 register_activation_hook( __FILE__, 'register_schedule');
 
 //Schedule register when plugin is installed
